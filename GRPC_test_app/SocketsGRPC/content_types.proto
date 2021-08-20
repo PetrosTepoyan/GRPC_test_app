@@ -1,0 +1,75 @@
+syntax = "proto3";
+package service;
+option go_package = "./;service";
+
+message MTText {
+  string text = 1;
+  repeated string edit_history = 2;
+}
+
+message MTMedia {
+  oneof media {
+    MTText text = 1;
+    MTAudioMessage audio = 2;
+    MTFile file = 3;
+  }
+}
+
+message MTForwardMessage {
+  int64 from = 1;
+  bool is_forward = 2;
+}
+
+message MTQuoteMessage { int64 replay_id = 1; }
+
+message MTChronicle {
+  int64 id = 1;
+  string link = 2;
+}
+
+message MTProfile {
+  int64 id = 1;
+  string avatar = 2;
+  string nickname = 3;
+}
+
+message MTProfilePhoto {
+  int64 id = 1;
+  string preview = 2;
+  string ogirinal = 3;
+}
+
+message MTMoment {
+  int64 id = 1;
+  string link = 2;
+}
+
+message MTNews { string message_id = 1; }
+
+message MTChoose {
+  int64 id = 1;
+  string link = 2;
+}
+
+/*
+*/
+
+message MTSystem {
+  string type = 1;
+  bytes addonal_data = 2;
+}
+
+message MTAudioMessage {
+  string link = 1;
+  int32 duration = 2;
+  repeated int32 sound_wave = 3;
+}
+
+message MTFile {
+  int64 size = 1;
+  string resolution = 2;
+  string mime = 3;
+  string file_type = 4;
+  repeated string preview = 5;
+  string original = 6;
+}

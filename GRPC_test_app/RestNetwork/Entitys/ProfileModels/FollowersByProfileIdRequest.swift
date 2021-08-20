@@ -1,0 +1,30 @@
+//
+//  File.swift
+//  
+//
+//  Created by Anton Yaroshchuk on 30.07.2021.
+//
+
+import Foundation
+
+public struct FollowersByProfileIdRequest: Codable {
+    public var profileIds: [Int]
+    
+    public init(profileIds: [Int]){
+        self.profileIds = profileIds
+    }
+    
+    public enum CodingKeys: String, CodingKey {
+        case profileIds
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        profileIds = try container.decode([Int].self, forKey: .profileIds)
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(profileIds, forKey: .profileIds)
+    }
+}

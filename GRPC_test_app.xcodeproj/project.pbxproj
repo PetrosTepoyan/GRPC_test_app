@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,13 @@
 		1526AF5D26CEE4AE007DC783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1526AF5B26CEE4AE007DC783 /* Main.storyboard */; };
 		1526AF5F26CEE4B1007DC783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1526AF5E26CEE4B1007DC783 /* Assets.xcassets */; };
 		1526AF6226CEE4B1007DC783 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1526AF6026CEE4B1007DC783 /* LaunchScreen.storyboard */; };
+		15687B5226CEF39A0005106B /* EncriptionManager in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5126CEF39A0005106B /* EncriptionManager */; };
+		15687B5426CEF39A0005106B /* AsapManager in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5326CEF39A0005106B /* AsapManager */; };
+		15687B5626CEF39A0005106B /* AuthorizationManager in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5526CEF39A0005106B /* AuthorizationManager */; };
+		15687B5826CEF39A0005106B /* RestNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5726CEF39A0005106B /* RestNetwork */; };
+		15687B5A26CEF39A0005106B /* Link in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5926CEF39A0005106B /* Link */; };
+		15687B5C26CEF39A0005106B /* SocketsGRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5B26CEF39A0005106B /* SocketsGRPC */; };
+		15687B5E26CEF39A0005106B /* ProfileManager in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5D26CEF39A0005106B /* ProfileManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15687B5A26CEF39A0005106B /* Link in Frameworks */,
+				15687B5226CEF39A0005106B /* EncriptionManager in Frameworks */,
+				15687B5626CEF39A0005106B /* AuthorizationManager in Frameworks */,
+				15687B5426CEF39A0005106B /* AsapManager in Frameworks */,
+				15687B5826CEF39A0005106B /* RestNetwork in Frameworks */,
+				15687B5C26CEF39A0005106B /* SocketsGRPC in Frameworks */,
+				15687B5E26CEF39A0005106B /* ProfileManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +97,15 @@
 			dependencies = (
 			);
 			name = GRPC_test_app;
+			packageProductDependencies = (
+				15687B5126CEF39A0005106B /* EncriptionManager */,
+				15687B5326CEF39A0005106B /* AsapManager */,
+				15687B5526CEF39A0005106B /* AuthorizationManager */,
+				15687B5726CEF39A0005106B /* RestNetwork */,
+				15687B5926CEF39A0005106B /* Link */,
+				15687B5B26CEF39A0005106B /* SocketsGRPC */,
+				15687B5D26CEF39A0005106B /* ProfileManager */,
+			);
 			productName = GRPC_test_app;
 			productReference = 1526AF5226CEE4AE007DC783 /* GRPC_test_app.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +133,9 @@
 				Base,
 			);
 			mainGroup = 1526AF4926CEE4AD007DC783;
+			packageReferences = (
+				15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */,
+			);
 			productRefGroup = 1526AF5326CEE4AE007DC783 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +367,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sfera-inc/sphera-asap-link.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.16;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15687B5126CEF39A0005106B /* EncriptionManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = EncriptionManager;
+		};
+		15687B5326CEF39A0005106B /* AsapManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = AsapManager;
+		};
+		15687B5526CEF39A0005106B /* AuthorizationManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = AuthorizationManager;
+		};
+		15687B5726CEF39A0005106B /* RestNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = RestNetwork;
+		};
+		15687B5926CEF39A0005106B /* Link */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = Link;
+		};
+		15687B5B26CEF39A0005106B /* SocketsGRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = SocketsGRPC;
+		};
+		15687B5D26CEF39A0005106B /* ProfileManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15687B5026CEF39A0005106B /* XCRemoteSwiftPackageReference "sphera-asap-link" */;
+			productName = ProfileManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1526AF4A26CEE4AD007DC783 /* Project object */;
 }

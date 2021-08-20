@@ -1,0 +1,98 @@
+syntax = "proto3";
+package service;
+option go_package = "./;service";
+
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "pkg/service/content_types.proto";
+
+service Chat {
+  rpc Stream(stream StreamRequest) returns (stream StreamResponse) {
+    option (google.api.http) = {
+      get : "/v1/chat/stream"
+    };
+  }
+  rpc SendMessage(Message) returns (MessageResponse) {
+    option (google.api.http) = {
+      post : "/v1/chat/stream"
+      body : "*"
+    };
+  }
+}
+
+message StreamResponse {
+  google.protobuf.Timestamp timestamp = 1;
+
+  oneof event {
+    Message message = 2;
+    Auth auth = 3;
+  }
+}
+
+message StreamRequest {
+  oneof event {
+    Message message = 1;
+    Auth auth = 2;
+  }
+}
+
+enum MessageTypes {
+  TEXT = 0;
+  MEDIA = 1;
+  FORWARD = 2;
+  QUOTE = 3;
+  CHRONIC = 4;
+  PROFILE = 5;
+  PROFILE_PHOTO = 6;
+  MOMENT = 7;
+  NEWS = 8;
+  CHOOSE = 9;
+  SYSTEM = 10;
+}
+
+enum MessageStatuses {
+  RECIEVED = 0;
+  READED = 1;
+  ERROR = 2;
+}
+
+enum ChatTypes {
+  DIRECT = 0;
+  GROUP = 1;
+  CHANNEL = 2;
+}
+
+message Message {
+  repeated int64 recipient = 1; // system field
+  string id = 2;
+  int64 from = 3; // user who sent message
+  int64 to = 4;   // a chat id or a contact id who was recieve this the message
+  MessageTypes type = 5;
+  MessageStatuses status = 6;
+  ChatTypes chat_type = 7;
+  bool is_favorite = 8;
+  int64 views = 9; // views counter
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp upated_at = 11;
+  google.protobuf.Timestamp deleted_at = 12;
+
+  oneof content {
+    MTText text = 13;
+    MTMedia media = 14;
+    MTForwardMessage forward = 15;
+    MTQuoteMessage quote = 16;
+    MTChronicle chronicle = 17;
+    MTProfile profile = 18;
+    MTProfilePhoto profile_photo = 19;
+    MTMoment moment = 20;
+    MTNews news = 21;
+    MTChoose choose = 22;
+  }
+}
+
+message MessageResponse {
+  google.protobuf.Timestamp timestamp = 1;
+  Message message = 2;
+}
+
+message Auth { MTText token = 1; }
