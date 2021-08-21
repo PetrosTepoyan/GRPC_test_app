@@ -20,6 +20,9 @@
 		15687B5A26CEF39A0005106B /* Link in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5926CEF39A0005106B /* Link */; };
 		15687B5C26CEF39A0005106B /* SocketsGRPC in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5B26CEF39A0005106B /* SocketsGRPC */; };
 		15687B5E26CEF39A0005106B /* ProfileManager in Frameworks */ = {isa = PBXBuildFile; productRef = 15687B5D26CEF39A0005106B /* ProfileManager */; };
+		15B5082126CFEF680000D060 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5082026CFEF680000D060 /* Priority.swift */; };
+		15B5082226CFEF690000D060 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5081E26CFEF680000D060 /* PriorityQueue.swift */; };
+		15B5082326CFEF690000D060 /* SendingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5081F26CFEF680000D060 /* SendingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		1526AF5E26CEE4B1007DC783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1526AF6126CEE4B1007DC783 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1526AF6326CEE4B1007DC783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B5081E26CFEF680000D060 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		15B5081F26CFEF680000D060 /* SendingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingManager.swift; sourceTree = "<group>"; };
+		15B5082026CFEF680000D060 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 				1526AF5526CEE4AE007DC783 /* AppDelegate.swift */,
 				1526AF5726CEE4AE007DC783 /* SceneDelegate.swift */,
 				1526AF5926CEE4AE007DC783 /* ViewController.swift */,
+				15B5082026CFEF680000D060 /* Priority.swift */,
+				15B5081E26CFEF680000D060 /* PriorityQueue.swift */,
+				15B5081F26CFEF680000D060 /* SendingManager.swift */,
 				1526AF5B26CEE4AE007DC783 /* Main.storyboard */,
 				1526AF5E26CEE4B1007DC783 /* Assets.xcassets */,
 				1526AF6026CEE4B1007DC783 /* LaunchScreen.storyboard */,
@@ -165,7 +174,10 @@
 			files = (
 				1526AF5A26CEE4AE007DC783 /* ViewController.swift in Sources */,
 				1526AF5626CEE4AE007DC783 /* AppDelegate.swift in Sources */,
+				15B5082226CFEF690000D060 /* PriorityQueue.swift in Sources */,
 				1526AF5826CEE4AE007DC783 /* SceneDelegate.swift in Sources */,
+				15B5082326CFEF690000D060 /* SendingManager.swift in Sources */,
+				15B5082126CFEF680000D060 /* Priority.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
